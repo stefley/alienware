@@ -25,12 +25,11 @@ gulp.task('sass', function() {
 gulp.task('minifyJs', function() {
     return gulp.src('./src/js/*.js')
         .pipe(uglifyJs())
-        .pipe(concat('all.js'))
         .pipe(gulp.dest('./dist/js/'));
 });
 // 监听Html
 gulp.task('html', ['sass', 'minifyJs'], function() {
-    return gulp.src('./index.html').pipe(connect.reload());
+    return gulp.src('./list.html').pipe(connect.reload());
 });
 
 // 监听
